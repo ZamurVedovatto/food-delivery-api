@@ -1,0 +1,76 @@
+mutation {
+  createKey(
+  	type: "asa"
+    userId: "605a97edaaedb793ec96daaa"
+    username: "zamur"
+    title: "asas"
+  ) {
+    id
+    type
+    title
+    confirmed
+    active
+    userId
+    username
+    address
+  }
+}
+
+query getKeys {
+  getKeys {
+    userId
+    id
+    confirmed
+    title
+    active
+  }
+}
+
+
+query getUserKeys {
+  getUserKeys(userId:"605a97edaaedb793ec96daaa") {
+    userId
+    id
+    confirmed
+    title
+    active
+  }
+}
+
+
+
+
+mutation {
+  toggleActiveKey(userId: "605a97edaaedb793ec96daaa" , keyId: "60620d05f65fc1375c52e38a") {
+    active
+    type
+    title
+  }
+}
+
+
+mutation FavoriteKey {
+  favoriteKey(userId:"605a97edaaedb793ec96daaa", keyId: "60627c738934f084708f31c4") {
+		id
+    type
+    title
+    confirmed
+    active
+    userId
+    username
+    address
+  }
+}
+
+query GET_USER_FAVORITED_KEYS {
+	getUserFavoritedKeys(userId: "6069292180a7b835d8458e47") {
+		id
+    type
+    title
+    confirmed
+    active
+    userId
+    username
+    address
+  }
+}

@@ -1,0 +1,90 @@
+query {
+  getMessages {
+    id
+    modality
+    targetKey
+    body
+    senderId
+    senderKey
+    read
+    received
+    createdAt
+    comments {
+      body
+      createdAt
+    }
+    likes {
+      createdAt
+      username
+    }
+    likeCount
+    commentCount
+  }
+}
+
+mutation {
+  createMessage(modality: "single", targetKey: "6064e87b8f5dca7f68f2694d", body: "ota ota ota msg") {
+    id
+    modality
+		targetKey
+    senderId
+    body
+  }
+}
+
+query getMessage {
+  getMessage(messageId:"6064fc6a5794ba4a7065c148") {
+    modality
+    body
+  }
+}
+
+query getUserReceivedMessages {
+  getUserReceivedMessages(
+    userId: "6060f0714105662bf01329c4") {
+      id
+      modality
+      targetKey
+      body
+      senderId
+      senderKey
+      read
+      received
+      createdAt
+      comments {
+        body
+        createdAt
+      }
+      likes {
+        createdAt
+        username
+      }
+      likeCount
+      commentCount
+  }
+}
+
+query getUserSendedMessages {
+  getUserSendedMessages(
+    userId: "6060f0714105662bf01329c4") {
+      id
+      modality
+      targetKey
+      body
+      senderId
+      senderKey
+      read
+      received
+      createdAt
+      comments {
+        body
+        createdAt
+      }
+      likes {
+        createdAt
+        username
+      }
+      likeCount
+      commentCount
+  }
+}

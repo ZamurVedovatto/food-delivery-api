@@ -1,0 +1,47 @@
+mutation CREATE_ADDRESS_MUTATION {
+  createAddress(
+    userId: "606ba8ebb4ca18879868584e",
+    code:"30285090",
+    type:"house",
+    street: "Rua Carmo da Mata",
+    number:"578",
+    complement: "Casa",
+    neighborhood: "Vera Cruz",
+    city:"Belo Horizonte") {
+    	id
+    	userId
+    	code
+    	type
+    	street
+    	number
+    	complement
+    	neighborhood
+    	city
+    	country
+  }
+}
+
+query FETCH_ADDRESSES {
+  getAddresses {
+    id
+    code
+  }
+}
+
+query FETCH_ADDRESS {
+  getAddress(id:"606e45205ced9f367ca5dbec") {
+    id
+    code
+  }
+}
+
+query FETCH_USER_ADDRESSES {
+  getUserAddresses(userId: "606ba8ebb4ca18879868584e") {
+    id
+    code
+  }
+}
+
+mutation DELETE_ADDRESS {
+  deleteAddress(userId:"606ba8ebb4ca18879868584e", addressId:"606e45205ced9f367ca5dbec") 
+}
