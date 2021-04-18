@@ -45,14 +45,17 @@ module.exports.validateLoginInput = (username, password) => {
   }
 }
 
-module.exports.validateKeyInput = (type, title) => {
+module.exports.validateProductInput = (title, description, price) => {
   const errors = {}
-  if(type.trim() === '') {
-    errors.type = 'Type must not be empty'
+  if(title.trim() === '') {
+    errors.type = 'title must not be empty'
   }
-  if (type === 'plate' && title.trim() === '') {
-    errors.type = 'Plate must not be empty'
-  } 
+  if(description.trim() === '') {
+    errors.type = 'description must not be empty'
+  }
+  if(price.trim() === '') {
+    errors.type = 'price must not be empty'
+  }
   return {
     errors,
     valid: Object.keys(errors).length < 1
