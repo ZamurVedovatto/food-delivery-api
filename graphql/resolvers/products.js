@@ -6,7 +6,7 @@ module.exports = {
   Query: {
     async getProducts() {
       try {
-        const products = await ProductModel.find().sort({ title: -1 })
+        const products = await ProductModel.find().sort({ title: 1 })
         return products
       } catch (err) {
         throw new Error(err)
