@@ -12,6 +12,14 @@ module.exports = {
         throw new Error(err)
       }
     },
+		async getActiveProducts() {
+      try {
+        const products = await ProductModel.find({ active: true }).sort({ title: 1 })
+        return products
+      } catch (err) {
+        throw new Error(err)
+      }
+    },
     async getProduct(_, { productId }) {
       try {
         const product = await ProductModel.findOne( {"_id": productId })
